@@ -3,7 +3,7 @@
 <head>
 <!-- 必要参数 -->
 <meta charset="utf-8"/>
-<title>关于 | 高鐵酸鉀</title>
+<title>关于区域计算与中心化服务的设想 | 高鐵酸鉀</title>
 <meta name="keywords" content="关键词"/>
 <meta name="description" content="简述"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
@@ -43,20 +43,15 @@
     <section class="mdui-card">
         
         <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">关于</div>
-            <div class="mdui-card-primary-subtitle">发布于 2019.01.25 Friday.25th，包含标签 。</div>
+            <div class="mdui-card-primary-title">关于区域计算与中心化服务的设想</div>
+            <div class="mdui-card-primary-subtitle">发布于 2022.02.10 Thursday.10th，包含标签 。</div>
         </div>
-        <div class="mdui-card-content"><blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>高铁酸钾的博客站.</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>K2FeO4(高铁酸钾),一名大陆在读全日制高中生.</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>计算机,noi(p),Minecraft</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>请通过邮件<a href="mailto:K2FeO4@geto.su">K2FeO4#geto.su</a>(替换#为@)来联系.</p>
+        <div class="mdui-card-content"><p>最近对<em>轉數快</em>的结算系统很感兴趣,自己想了几套高可用的区域式分布模型.</p>
+<h2 id="1基于队列">1.基于队列</h2>
+<p>对每个区域的服务器,设立两个列表,500ms与中心数据库服务器(组)通信一次,如area_a与area_b,在1000ms中,前500ms提交area_a的数据,后500ms提交area_b的数据,对于查询数据则先查询区域Redis缓存,若无,对中心数据库服务器(组)进行请求,并合理善用区域分布式,将文件平铺在相邻多地,降低存储成本.</p>
+<h2 id="2基于radis">2.基于Radis</h2>
+<p>对于双方服务器,直接有请求向Radis上Hash-Data存,跟服务器(组)分别同步处理各类数据.</p>
+<h2 id="3未完待续">3...未完待续</h2>
 </div>
         <div class="mdui-card-header">
             <img class="mdui-card-header-avatar" src="https://www.geto.su/images/avatar.png">
@@ -96,7 +91,7 @@
 
 <nav class="mdui-container mdui-m-t-2 mdui-m-b-2">
     
-    
+    <a href="https://www.geto.su/post/hello-gridea/" mdui-tooltip="{content: '下一篇', position: 'left'}" class="mdui-float-right">Hello Gridea<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-l-1"><i class="mdui-icon material-icons">arrow_forward</i></button></a>
 </nav>
 
 <div class="mdui-m-t-2 mdui-text-center mdui-typo">

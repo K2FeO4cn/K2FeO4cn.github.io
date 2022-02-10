@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.geto.su</id>
     <title>高鐵酸鉀</title>
-    <updated>2022-02-09T02:06:52.850Z</updated>
+    <updated>2022-02-10T09:41:27.488Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.geto.su"/>
     <link rel="self" href="https://www.geto.su/atom.xml"/>
@@ -11,19 +11,35 @@
     <icon>https://www.geto.su/favicon.ico</icon>
     <rights>All rights reserved 2022, 高鐵酸鉀</rights>
     <entry>
+        <title type="html"><![CDATA[关于区域计算与中心化服务的设想]]></title>
+        <id>https://www.geto.su/post/guan-yu-qu-yu-ji-suan-yu-zhong-xin-hua-fu-wu-de-she-xiang/</id>
+        <link href="https://www.geto.su/post/guan-yu-qu-yu-ji-suan-yu-zhong-xin-hua-fu-wu-de-she-xiang/">
+        </link>
+        <updated>2022-02-10T01:21:59.000Z</updated>
+        <content type="html"><![CDATA[<p>最近对<em>轉數快</em>的结算系统很感兴趣,自己想了几套高可用的区域式分布模型.</p>
+<h2 id="1基于队列">1.基于队列</h2>
+<p>对每个区域的服务器,设立两个列表,500ms与中心数据库服务器(组)通信一次,如area_a与area_b,在1000ms中,前500ms提交area_a的数据,后500ms提交area_b的数据,对于查询数据则先查询区域Redis缓存,若无,对中心数据库服务器(组)进行请求,并合理善用区域分布式,将文件平铺在相邻多地,降低存储成本.</p>
+<h2 id="2基于radis">2.基于Radis</h2>
+<p>对于双方服务器,直接有请求向Radis上Hash-Data存,跟服务器(组)分别同步处理各类数据.</p>
+<h2 id="3未完待续">3...未完待续</h2>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://www.geto.su/post/hello-gridea/</id>
         <link href="https://www.geto.su/post/hello-gridea/">
         </link>
         <updated>2022-01-03T13:07:42.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
-<p>本站提供程序已经从 <a href="https://hexo.io/">Hexo</a> 迁移到了 <a href="https://gridea.dev/">Gridea</a></p>
+<p>本站提供程序已经从 <a href="https://hexo.io/">Hexo</a> 迁移到了 <a href="https://gridea.dev/">Gridea</a><br>
+所以说我把Hexo的欢迎文档删了换成Gridea的也很合理吧(逃</p>
 </blockquote>
 <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
-<p>本站提供程序已经从 <a href="https://hexo.io/">Hexo</a> 迁移到了 <a href="https://gridea.dev/">Gridea</a></p>
+<p>本站提供程序已经从 <a href="https://hexo.io/">Hexo</a> 迁移到了 <a href="https://gridea.dev/">Gridea</a><br>
+所以说我把Hexo的欢迎文档删了换成Gridea的也很合理吧(逃</p>
 </blockquote>
 <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
