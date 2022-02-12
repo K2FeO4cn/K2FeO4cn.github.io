@@ -3,7 +3,7 @@
 <head>
 <!-- 必要参数 -->
 <meta charset="utf-8"/>
-<title>关于区域计算与中心化服务的设想 | 高鐵酸鉀</title>
+<title>教程 如何将Microsoft Authenticator中的TOTP密钥导出 | 高鐵酸鉀</title>
 <meta name="keywords" content="关键词"/>
 <meta name="description" content="简述"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
@@ -43,15 +43,16 @@
     <section class="mdui-card">
         
         <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">关于区域计算与中心化服务的设想</div>
-            <div class="mdui-card-primary-subtitle">发布于 2022.02.10 Thursday.10th，包含标签 。</div>
+            <div class="mdui-card-primary-title">教程 如何将Microsoft Authenticator中的TOTP密钥导出</div>
+            <div class="mdui-card-primary-subtitle">发布于 2022.02.12 Saturday.12th，包含标签 。</div>
         </div>
-        <div class="mdui-card-content"><p>最近对<em>轉數快</em>的结算系统很感兴趣,自己想了几套高可用的区域式分布模型.</p>
-<h2 id="1基于队列">1.基于队列</h2>
-<p>对每个区域的服务器,设立两个列表,500ms与中心数据库服务器(组)通信一次,如area_a与area_b,在1000ms中,前500ms提交area_a的数据,后500ms提交area_b的数据,对于查询数据则先查询区域Redis缓存,若无,对中心数据库服务器(组)进行请求,并合理善用区域分布式,将文件平铺在相邻多地,降低存储成本.</p>
-<h2 id="2基于radis">2.基于Radis</h2>
-<p>对于双方服务器,直接有请求向Radis上Hash-Data存,跟服务器(组)分别同步处理各类数据.</p>
-<h2 id="3未完待续">3...未完待续</h2>
+        <div class="mdui-card-content"><p>最近要尝试下果子,恰巧我的是安卓,遂作此篇.<br>
+##1. 创建虚拟机并恢复云备份<br>
+在第一步,你要创建一个(或有)root权限的Android设备,比如说我在这一步使用VMOS(一款在Android上的虚拟机)并在其中安装了Authenticator.恢复成功后,我们进入到下一步.<br>
+##2. 使用文件管理器导出私钥文件<br>
+进入<code>/data/data/com.azure.authenticator/databases/</code>中(这一步需要第三方文件管理器并基于其root权限),将<code>PhoneFactor</code>,<code>PhoneFactor-shm</code>,<code>PhoneFactor-wal</code>三个文件导出到外部/电脑备用.<br>
+##3. 使用sqlite工具读取密钥<br>
+使用Sqlite可视化工具打开(将这三个文件放置于同一目录下,打开PhoneFactor),选择accounts表,获取数据(自行搜索如何读取表中数据).内部的<code>oauth-secret-key</code>即为你的TOTP验证器私钥(你可以导入到其他验证器中或者直接创建-我无法扫描二维码),Microsoft账户验证可以直接创建新的在iOS上,遂不详细阐述.</p>
 </div>
         <div class="mdui-card-header">
             <img class="mdui-card-header-avatar" src="https://www.geto.su/images/avatar.png">
@@ -90,8 +91,8 @@
 </main>
 
 <nav class="mdui-container mdui-m-t-2 mdui-m-b-2">
-    <a href="https://www.geto.su/post/jiao-cheng-ru-he-jiang-microsoft-authenticator-zhong-de-totp-mi-yao-dao-chu/" mdui-tooltip="{content: '上一篇', position: 'right'}"><button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-r-1"><i class="mdui-icon material-icons">arrow_back</i></button>教程 如何将Microsoft Authenticator中的TOTP密钥导出</a>
-    <a href="https://www.geto.su/post/hello-gridea/" mdui-tooltip="{content: '下一篇', position: 'left'}" class="mdui-float-right">Hello Gridea<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-l-1"><i class="mdui-icon material-icons">arrow_forward</i></button></a>
+    
+    <a href="https://www.geto.su/post/guan-yu-qu-yu-ji-suan-yu-zhong-xin-hua-fu-wu-de-she-xiang/" mdui-tooltip="{content: '下一篇', position: 'left'}" class="mdui-float-right">关于区域计算与中心化服务的设想<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-l-1"><i class="mdui-icon material-icons">arrow_forward</i></button></a>
 </nav>
 
 <div class="mdui-m-t-2 mdui-text-center mdui-typo">

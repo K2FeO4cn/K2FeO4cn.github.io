@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.geto.su</id>
     <title>高鐵酸鉀</title>
-    <updated>2022-02-12T01:19:26.886Z</updated>
+    <updated>2022-02-12T01:44:04.317Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.geto.su"/>
     <link rel="self" href="https://www.geto.su/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://www.geto.su/images/avatar.png</logo>
     <icon>https://www.geto.su/favicon.ico</icon>
     <rights>All rights reserved 2022, 高鐵酸鉀</rights>
+    <entry>
+        <title type="html"><![CDATA[教程 如何将Microsoft Authenticator中的TOTP密钥导出]]></title>
+        <id>https://www.geto.su/post/jiao-cheng-ru-he-jiang-microsoft-authenticator-zhong-de-totp-mi-yao-dao-chu/</id>
+        <link href="https://www.geto.su/post/jiao-cheng-ru-he-jiang-microsoft-authenticator-zhong-de-totp-mi-yao-dao-chu/">
+        </link>
+        <updated>2022-02-12T01:31:39.000Z</updated>
+        <content type="html"><![CDATA[<p>最近要尝试下果子,恰巧我的是安卓,遂作此篇.<br>
+##1. 创建虚拟机并恢复云备份<br>
+在第一步,你要创建一个(或有)root权限的Android设备,比如说我在这一步使用VMOS(一款在Android上的虚拟机)并在其中安装了Authenticator.恢复成功后,我们进入到下一步.<br>
+##2. 使用文件管理器导出私钥文件<br>
+进入<code>/data/data/com.azure.authenticator/databases/</code>中(这一步需要第三方文件管理器并基于其root权限),将<code>PhoneFactor</code>,<code>PhoneFactor-shm</code>,<code>PhoneFactor-wal</code>三个文件导出到外部/电脑备用.<br>
+##3. 使用sqlite工具读取密钥<br>
+使用Sqlite可视化工具打开(将这三个文件放置于同一目录下,打开PhoneFactor),选择accounts表,获取数据(自行搜索如何读取表中数据).内部的<code>oauth-secret-key</code>即为你的TOTP验证器私钥(你可以导入到其他验证器中或者直接创建-我无法扫描二维码),Microsoft账户验证可以直接创建新的在iOS上,遂不详细阐述.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于区域计算与中心化服务的设想]]></title>
         <id>https://www.geto.su/post/guan-yu-qu-yu-ji-suan-yu-zhong-xin-hua-fu-wu-de-she-xiang/</id>
